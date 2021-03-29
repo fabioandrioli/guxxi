@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/te', 'App\V1\AddressController@index');
+Route::get('/', 'App\V1\UserController@index');
+Route::post('/store', 'App\V1\UserController@store')->name('teste');
