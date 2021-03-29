@@ -15,7 +15,20 @@ class CreateRatesTable extends Migration
     {
         Schema::create('rates', function (Blueprint $table) {
             $table->id();
+            $table->enum('note',['pessimo','ruim','regular','bom','ótimo']);
+            $table->text('review');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('service_id');
+            $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users');
+
+            $table->foreign('service_id')
+            ->references('id')
+            ->on('services');
         });
     }
 

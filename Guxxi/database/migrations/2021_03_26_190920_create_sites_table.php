@@ -15,7 +15,13 @@ class CreateSitesTable extends Migration
     {
         Schema::create('sites', function (Blueprint $table) {
             $table->id();
+            $table->string('description');
+            $table->unsignedBigInteger('service_id');
             $table->timestamps();
+
+            $table->foreign('service_id')
+            ->references('id')
+            ->on('services');
         });
     }
 

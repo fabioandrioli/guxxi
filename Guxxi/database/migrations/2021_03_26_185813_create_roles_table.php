@@ -13,10 +13,10 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        // Schema::create('roles', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -26,6 +26,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        // Schema::dropIfExists('roles');
     }
 }
