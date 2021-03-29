@@ -15,7 +15,14 @@ class CreateAlbumsTable extends Migration
     {
         Schema::create('albums', function (Blueprint $table) {
             $table->id();
+            $table->binary('photo');
+            $table->unsignedBigInteger('service_id');
+            $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('service_id')
+            ->references('id')
+            ->on('services');
         });
     }
 
