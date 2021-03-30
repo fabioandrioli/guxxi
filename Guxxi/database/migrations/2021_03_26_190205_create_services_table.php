@@ -17,7 +17,7 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->binary('image')->nullable();
+            $table->string('image')->nullable();
             $table->text('tags')->nullable();
 
             $table->bigInteger('user_id')->unsigned();
