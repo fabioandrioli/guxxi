@@ -39,14 +39,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $image = Image::make($data['photo']->resize(200,300)->save('user.jpg'));
 
-        if(User::create($data)){
-            return "criado com sucesso.";
-        }else{
-            return "Falha";
-        }
     }
 
     /**

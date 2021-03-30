@@ -22,7 +22,6 @@ class CreateServicesTable extends Migration
 
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('category_id')->unsigned();
-            $table->bigInteger('address_id')->unsigned()->nullable();
             $table->softDeletes();
             $table->timestamps();
 
@@ -34,9 +33,38 @@ class CreateServicesTable extends Migration
                 ->references('id')
                 ->on('categories');
 
-            $table->foreign('address_id')
+        });
+
+        Schema::create('addresses', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('service_id')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('category_id');
+            $table->string('country');
+            $table->string('city');
+            $table->string('state');
+            $table->string('street');
+            $table->string('district');
+            $table->string('zipcode')->nullable();
+            $table->string('number')->nullable();
+            $table->string('complement')->nullable();
+            $table->softDeletes();
+            $table->timestamps();
+
+            $table->foreign('service_id')
                   ->references('id')
-                  ->on('addresses');
+                  ->on('services')
+                  ->onDelete('cascade');
+
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade');
+
+            $table->foreign('category_id')
+                  ->references('id')
+                  ->on('categories')
+                  ->onDelete('cascade');
         });
     }
 
@@ -48,5 +76,6 @@ class CreateServicesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('services');
+        Schema::dropIfExists('addresses');
     }
 }

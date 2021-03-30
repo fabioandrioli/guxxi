@@ -17,12 +17,19 @@ class CreateAnswersTable extends Migration
             $table->id();
             $table->text('reply');
             $table->unsignedBigInteger('answer_id');
+            $table->unsignedBigInteger('service_id');
             $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('answer_id')
             ->references('id')
-            ->on('answers');
+            ->on('answers')
+            ->onDelete('cascade');
+
+            $table->foreign('service_id')
+            ->references('id')
+            ->on('services')
+            ->onDelete('cascade');
         });
     }
 

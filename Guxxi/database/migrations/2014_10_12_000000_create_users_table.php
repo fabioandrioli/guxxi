@@ -19,18 +19,6 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('addresses', function (Blueprint $table) {
-            $table->id();
-            $table->string('city');
-            $table->string('street');
-            $table->string('district');
-            $table->string('zipcode')->nullable();
-            $table->string('number')->nullable();
-            $table->string('complement')->nullable();
-            $table->softDeletes();
-            $table->timestamps();
-        });
-
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('role_id')->unsigned();
@@ -39,7 +27,6 @@ class CreateUsersTable extends Migration
             $table->string('cpf')->nullable();
             $table->string('email')->unique();
             $table->date('datebirth');
-            $table->bigInteger('address_id')->unsigned()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
@@ -48,11 +35,8 @@ class CreateUsersTable extends Migration
 
             $table->foreign('role_id')
                   ->references('id')
-                  ->on('roles');
-
-            $table->foreign('address_id')
-                  ->references('id')
-                  ->on('addresses');
+                  ->on('roles')
+                  ->onDelete('cascade');
         });
     }
 
@@ -64,7 +48,6 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('roles');
-        Schema::dropIfExists('addresses');
         Schema::dropIfExists('users');
     }
 }

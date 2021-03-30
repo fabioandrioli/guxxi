@@ -22,7 +22,8 @@ class CreateSitesTable extends Migration
 
             $table->foreign('service_id')
             ->references('id')
-            ->on('services');
+            ->on('services')
+            ->onDelete('cascade');
         });
     }
 
