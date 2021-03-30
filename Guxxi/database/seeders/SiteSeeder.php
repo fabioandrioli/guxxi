@@ -18,6 +18,6 @@ class SiteSeeder extends Seeder
             'link' => 'www.linkedin.com/in/fábio-gilberto-andrioli',
             'description' => 'Acesse meu linkdlin',
             'service_id' => 1,
-        ])
+        ]);
     }
 }

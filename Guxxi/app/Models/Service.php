@@ -15,6 +15,5 @@ class Service extends Model
         'tags',
         'user_id',
         'category_id',
-        'address_id',
     ];
 }

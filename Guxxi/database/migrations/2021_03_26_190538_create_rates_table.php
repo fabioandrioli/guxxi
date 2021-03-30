@@ -17,8 +17,8 @@ class CreateRatesTable extends Migration
             $table->id();
             $table->enum('note',['pessimo','ruim','regular','bom','ótimo']);
             $table->text('review');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('service_id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('service_id')->unsigned();
             $table->softDeletes();
             $table->timestamps();
 

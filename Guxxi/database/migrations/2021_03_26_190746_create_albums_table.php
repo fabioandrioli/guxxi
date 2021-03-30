@@ -16,7 +16,7 @@ class CreateAlbumsTable extends Migration
         Schema::create('albums', function (Blueprint $table) {
             $table->id();
             $table->string('photo');
-            $table->unsignedBigInteger('service_id');
+            $table->bigInteger('service_id')->unsigned();
             $table->softDeletes();
             $table->timestamps();
 

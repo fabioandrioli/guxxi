@@ -17,7 +17,7 @@ class CreateSitesTable extends Migration
             $table->id();
             $table->string('link');
             $table->string('description');
-            $table->unsignedBigInteger('service_id');
+            $table->bigInteger('service_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('service_id')

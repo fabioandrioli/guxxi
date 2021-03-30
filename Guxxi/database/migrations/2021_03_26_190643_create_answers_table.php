@@ -16,14 +16,14 @@ class CreateAnswersTable extends Migration
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
             $table->text('reply');
-            $table->unsignedBigInteger('answer_id');
-            $table->unsignedBigInteger('service_id');
+            $table->bigInteger('rate_id')->unsigned();
+            $table->bigInteger('service_id')->unsigned();
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('answer_id')
+            $table->foreign('rate_id')
             ->references('id')
-            ->on('answers')
+            ->on('rates')
             ->onDelete('cascade');
 
             $table->foreign('service_id')
