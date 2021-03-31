@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\V1\UserController@index');
+Route::get('/',function(){
+    return "Welcome";
+});
 Route::post('/store', 'App\V1\UserController@store')->name('teste');
