@@ -23,8 +23,8 @@ use  App\Http\Controllers\Api\V1\UserController;
 // });
 
 
-Route::prefix('v1')->group(function () {
-    Route::resource('users', 'Api\V1\UserController');
+Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'],function () {
+    Route::resource('users', 'UserController');
 });
 
 
