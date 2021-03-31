@@ -14,4 +14,8 @@ class Site extends Model
         'description',
         'service_id',
     ];
+
+    public function service(){
+        return $this->belongsTo(Service::class);
+    }
 }

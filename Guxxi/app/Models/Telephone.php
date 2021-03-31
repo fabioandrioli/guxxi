@@ -13,4 +13,8 @@ class Telephone extends Model
         'number',
         'service_id',
     ];
+
+    public function service(){
+        return $this->belongsTo(Service::class);
+    }
 }

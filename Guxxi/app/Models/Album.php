@@ -12,4 +12,8 @@ class Album extends Model
         'reply',
         'answer_id',
     ];
+
+    public function service(){
+        return $this->belongsTo(Service::class);
+    }
 }
