@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories\Models;
+namespace Database\Factories;
 
 use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -22,14 +22,12 @@ class ServiceFactory extends Factory
      */
     public function definition()
     {
-        $user = User::factory()->create();
-        $category = Category::factory()->create();
         return [
             'name' => $this->faker->name,
             'description' => $this->faker->text,
             'image' => $this->faker->name.'jpg',
-            'user_id' => $user->id,
-            'category_id' => $category->id,
+            'user_id' =>User::factory(),
+            'category_id' => Category::factory(),
         ];
     }
 }

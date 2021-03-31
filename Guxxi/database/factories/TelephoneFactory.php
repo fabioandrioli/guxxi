@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories\Models;
+namespace Database\Factories;
 
 use App\Models\Telephone;
 use App\Models\Service;
@@ -22,10 +22,9 @@ class TelephoneFactory extends Factory
      */
     public function definition()
     {
-        $service = Service::factory()->create();
         return [
            'number' => $this->faker->phoneNumber,
-           'service_id' =>  $service->id,
+           'service_id' =>   Service::factory(),
         ];
     }
 }

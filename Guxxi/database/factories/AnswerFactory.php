@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories\Models;
+namespace Database\Factories;
 
 use App\Models\Answer;
 use App\Models\Rate;
@@ -22,10 +22,9 @@ class AnswerFactory extends Factory
      */
     public function definition()
     {
-        $rate = Rate::factory()->create();
         return [
             'reply' => $this->faker->text,
-            'rate_id' => $rate->id,
+            'rate_id' => Rate::factory(),
         ];
     }
 }

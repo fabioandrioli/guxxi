@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories\Models;
+namespace Database\Factories;
 
 use App\Models\Address;
 use App\Models\User;
@@ -23,7 +23,6 @@ class AddressFactory extends Factory
      */
     public function definition()
     {
-        $user = User::factory()->create();
         return [
             'country' => $this->faker->country,
             'state' => 'Paraná',
@@ -33,7 +32,7 @@ class AddressFactory extends Factory
             'zipcode' => $this->faker->postcode,
             'number' => $this->faker->buildingNumber,
             'complement' => 'Casa',
-            'user_id' => $user->id,
+            'user_id' => User::factory(),
         ];
     }
 }

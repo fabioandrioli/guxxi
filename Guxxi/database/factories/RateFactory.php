@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories\Models;
+namespace Database\Factories;
 
 use App\Models\Rate;
 use App\Models\Service;
@@ -23,13 +23,11 @@ class RateFactory extends Factory
      */
     public function definition()
     {
-        $user = User::factory()->create();
-        $service = User::factory()->create();
         return [
             'note' => 'regular',
             'review' => $this->faker->text,
-            'user_id' => $user->id,
-            'service_id' =>  $service->id,
+            'user_id' => User::factory(),
+            'service_id' =>  Service::factory(),
         ];
     }
 }

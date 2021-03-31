@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use App\Models\User;
-use App\Models\Address;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Role;
@@ -24,15 +23,12 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        $address = Address::factory()->create();
-        $role = Role::factory()->create();
         return [
             'name' => $this->faker->name,
             'photo' => $this->faker->name.'jpg',
             'cpf' => $this->faker->buildingNumber,
             'datebirth' => $this->faker->date,
-            'address_id' => $address->id,
-            'role_id' => $role->id,
+            'role_id' => Role::factory(),
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories\Models;
+namespace Database\Factories;
 
 use App\Models\Site;
 use App\Models\Service;
@@ -22,11 +22,11 @@ class SiteFactory extends Factory
      */
     public function definition()
     {
-        $service = Service::factory()->create();
+
         return [
             'link' => $this->faker->url,
             'description' => $this->faker->sentence,
-            'service_id' => $service->id,
+            'service_id' =>  Service::factory(),
         ];
     }
 }
