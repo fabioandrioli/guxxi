@@ -27,4 +27,8 @@ Route::prefix('v1')->group(function () {
     Route::resource('users', 'Api\V1\UserController');
 });
 
+Route::get('/',function(){
+    return "Welcome";
+});
+
 
