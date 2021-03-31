@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\App\V1;
+namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
-use App\Models\Rate;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
+use Image;
 
-class RateController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,9 @@ class RateController extends Controller
      */
     public function index()
     {
-        //
+        $user = User::findOrfail(1);
+        $role = $user->role;
+        return response()->json($role);
     }
 
     /**
@@ -24,7 +28,8 @@ class RateController extends Controller
      */
     public function create()
     {
-        //
+
+
     }
 
     /**
@@ -35,16 +40,16 @@ class RateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Rate  $rate
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Rate $rate)
+    public function show($id)
     {
         //
     }
@@ -52,10 +57,10 @@ class RateController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Rate  $rate
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Rate $rate)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +69,10 @@ class RateController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Rate  $rate
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rate $rate)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +80,10 @@ class RateController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Rate  $rate
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Rate $rate)
+    public function destroy($id)
     {
         //
     }

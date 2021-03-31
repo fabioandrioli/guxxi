@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\App\V1;
+namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
-use App\Models\Album;
+use App\Models\Site;
 use Illuminate\Http\Request;
 
-class AlbumController extends Controller
+class SiteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class AlbumController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Album  $album
+     * @param  \App\Models\Site  $site
      * @return \Illuminate\Http\Response
      */
-    public function show(Album $album)
+    public function show(Site $site)
     {
         //
     }
@@ -52,10 +52,10 @@ class AlbumController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Album  $album
+     * @param  \App\Models\Site  $site
      * @return \Illuminate\Http\Response
      */
-    public function edit(Album $album)
+    public function edit(Site $site)
     {
         //
     }
@@ -64,10 +64,10 @@ class AlbumController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Album  $album
+     * @param  \App\Models\Site  $site
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Album $album)
+    public function update(Request $request, Site $site)
     {
         //
     }
@@ -75,10 +75,10 @@ class AlbumController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Album  $album
+     * @param  \App\Models\Site  $site
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Album $album)
+    public function destroy(Site $site)
     {
         //
     }

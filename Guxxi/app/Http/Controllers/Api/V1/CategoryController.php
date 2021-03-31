@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\App\V1;
+
+namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
-use App\Models\Telephone;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class TelephoneController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class TelephoneController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Telephone  $telephone
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Telephone $telephone)
+    public function show(Category $category)
     {
         //
     }
@@ -52,10 +53,10 @@ class TelephoneController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Telephone  $telephone
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Telephone $telephone)
+    public function edit(Category $category)
     {
         //
     }
@@ -64,10 +65,10 @@ class TelephoneController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Telephone  $telephone
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Telephone $telephone)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -75,10 +76,10 @@ class TelephoneController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Telephone  $telephone
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Telephone $telephone)
+    public function destroy(Category $category)
     {
         //
     }

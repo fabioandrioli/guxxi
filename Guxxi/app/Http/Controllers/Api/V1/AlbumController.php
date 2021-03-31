@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\App\V1;
+namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Album;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
-use Image;
 
-class UserController extends Controller
+class AlbumController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('site.index.index',compact('users'));
+        //
     }
 
     /**
@@ -27,8 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-
-
+        //
     }
 
     /**
@@ -39,16 +35,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Album $album)
     {
         //
     }
@@ -56,10 +52,10 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Album $album)
     {
         //
     }
@@ -68,10 +64,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Album $album)
     {
         //
     }
@@ -79,10 +75,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Album $album)
     {
         //
     }

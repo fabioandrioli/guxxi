@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\App\V1;
+namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
-use App\Models\Answer;
+use App\Models\Telephone;
 use Illuminate\Http\Request;
 
-class AnswerController extends Controller
+class TelephoneController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class AnswerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Answer  $answer
+     * @param  \App\Models\Telephone  $telephone
      * @return \Illuminate\Http\Response
      */
-    public function show(Answer $answer)
+    public function show(Telephone $telephone)
     {
         //
     }
@@ -52,10 +52,10 @@ class AnswerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Answer  $answer
+     * @param  \App\Models\Telephone  $telephone
      * @return \Illuminate\Http\Response
      */
-    public function edit(Answer $answer)
+    public function edit(Telephone $telephone)
     {
         //
     }
@@ -64,10 +64,10 @@ class AnswerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Answer  $answer
+     * @param  \App\Models\Telephone  $telephone
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Answer $answer)
+    public function update(Request $request, Telephone $telephone)
     {
         //
     }
@@ -75,10 +75,10 @@ class AnswerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Answer  $answer
+     * @param  \App\Models\Telephone  $telephone
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Answer $answer)
+    public function destroy(Telephone $telephone)
     {
         //
     }
