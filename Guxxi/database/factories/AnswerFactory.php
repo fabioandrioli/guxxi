@@ -2,7 +2,8 @@
 
 namespace Database\Factories\Models;
 
-use App\Models\Models\Answer;
+use App\Models\Answer;
+use App\Models\Rate;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AnswerFactory extends Factory
@@ -21,8 +22,10 @@ class AnswerFactory extends Factory
      */
     public function definition()
     {
+        $rate = Rate::factory()->create();
         return [
-            //
+            'reply' => $this->faker->text,
+            'rate_id' => $rate->id,
         ];
     }
 }

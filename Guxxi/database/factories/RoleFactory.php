@@ -2,7 +2,7 @@
 
 namespace Database\Factories\Models;
 
-use App\Models\Models\Role;
+use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RoleFactory extends Factory
@@ -22,7 +22,7 @@ class RoleFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name,
         ];
     }
 }

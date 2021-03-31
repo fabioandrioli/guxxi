@@ -2,7 +2,8 @@
 
 namespace Database\Factories\Models;
 
-use App\Models\Models\Album;
+use App\Models\Album;
+use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AlbumFactory extends Factory
@@ -21,8 +22,10 @@ class AlbumFactory extends Factory
      */
     public function definition()
     {
+        $service = Service::factory()->create();
         return [
-            //
+            "photo" => $this->faker->name().'jpg',
+            "service_id" => $service->id,
         ];
     }
 }

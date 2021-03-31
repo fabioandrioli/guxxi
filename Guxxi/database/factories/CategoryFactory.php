@@ -2,7 +2,7 @@
 
 namespace Database\Factories\Models;
 
-use App\Models\Models\Category;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CategoryFactory extends Factory
@@ -22,7 +22,7 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "name" => $this->faker->name,
         ];
     }
 }

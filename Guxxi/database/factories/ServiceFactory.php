@@ -2,9 +2,10 @@
 
 namespace Database\Factories\Models;
 
-use App\Models\Models\Service;
+use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use App\Models\User;
+use App\Models\Category;
 class ServiceFactory extends Factory
 {
     /**
@@ -21,8 +22,14 @@ class ServiceFactory extends Factory
      */
     public function definition()
     {
+        $user = User::factory()->create();
+        $category = Category::factory()->create();
         return [
-            //
+            'name' => $this->faker->name,
+            'description' => $this->faker->text,
+            'image' => $this->faker->name.'jpg',
+            'user_id' => $user->id,
+            'category_id' => $category->id,
         ];
     }
 }

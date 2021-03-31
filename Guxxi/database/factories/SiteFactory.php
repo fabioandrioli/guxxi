@@ -2,7 +2,8 @@
 
 namespace Database\Factories\Models;
 
-use App\Models\Models\Site;
+use App\Models\Site;
+use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SiteFactory extends Factory
@@ -21,8 +22,11 @@ class SiteFactory extends Factory
      */
     public function definition()
     {
+        $service = Service::factory()->create();
         return [
-            //
+            'link' => $this->faker->url,
+            'description' => $this->faker->sentence,
+            'service_id' => $service->id,
         ];
     }
 }

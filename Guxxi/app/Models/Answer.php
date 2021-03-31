@@ -10,7 +10,7 @@ class Answer extends Model
     use HasFactory;
     protected $fillable = [
         'reply',
-        'answer_id',
+        'rate_id',
     ];
 
     public function service(){

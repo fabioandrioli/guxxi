@@ -17,6 +17,8 @@ class Address extends Model
         'zipcode',
         'number',
         'complement',
+        'user_id',
+        'service_id',
     ];
 
     public function service(){
