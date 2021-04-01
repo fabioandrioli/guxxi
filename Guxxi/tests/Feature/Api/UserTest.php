@@ -16,15 +16,10 @@ class UserTest extends TestCase
      *
      * @return void
      */
-    public function test_user_create()
-    {
-
-
-        //User::factory()->create();
+    public function test_user_index(){
 
         $response = $this->get('/api/v1/users');
         $response->dump();
-
 
         $response->assertStatus(200);
     }
