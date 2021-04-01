@@ -25,7 +25,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'photo' => $this->faker->name.'jpg',
+            'photo' => $this->faker->word.'.jpg',
             'cpf' => $this->faker->buildingNumber,
             'datebirth' => $this->faker->date,
             'role_id' => Role::factory(),

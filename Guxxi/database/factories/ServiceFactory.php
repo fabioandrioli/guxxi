@@ -25,7 +25,7 @@ class ServiceFactory extends Factory
         return [
             'name' => $this->faker->name,
             'description' => $this->faker->text,
-            'image' => $this->faker->name.'jpg',
+            'image' => $this->faker->word.'.jpg',
             'user_id' =>User::factory(),
             'category_id' => Category::factory(),
         ];

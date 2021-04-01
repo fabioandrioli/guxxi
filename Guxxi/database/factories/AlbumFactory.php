@@ -24,7 +24,7 @@ class AlbumFactory extends Factory
     {
 
         return [
-            "photo" => $this->faker->name().'jpg',
+            "photo" => $this->faker->word.'.jpg',
             "service_id" => Service::factory(),
         ];
     }

@@ -24,6 +24,7 @@ class CategoryFactory extends Factory
 
         return [
             "name" => $this->faker->name,
+            "image" => $this->faker->word.'.jpg',
         ];
     }
 }

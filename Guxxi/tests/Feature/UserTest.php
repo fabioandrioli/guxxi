@@ -16,13 +16,13 @@ class UserTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_user_create()
     {
 
 
-        User::factory()->create();
+        //User::factory()->create();
 
-        $response = $this->get('/');
+        $response = $this->get('/api/v1/users');
         $response->dump();
 
 

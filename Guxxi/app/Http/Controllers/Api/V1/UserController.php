@@ -16,9 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::findOrfail(1);
-        $role = $user->role;
-        return response()->json($role);
+        $users = User::orderBy('id','desc')->paginate(5);
+        return response()->json($users);
     }
 
     /**
